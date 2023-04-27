@@ -1,42 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:hurtado/formulariocliente.dart';
+import 'package:hurtado/formularioempleado.dart';
+import 'package:hurtado/formulariohamburguesa.dart';
+import 'package:hurtado/formulariosucursal.dart';
+import 'package:hurtado/inicio.dart';
+import 'package:hurtado/card.dart';
+import 'package:hurtado/productos.dart';
+import 'package:hurtado/tabbar.dart';
+import 'package:hurtado/listviewavatar.dart';
+import 'package:hurtado/formularioventas.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MaterialApp(
+    title: 'Named Routes Demo',
+    debugShowCheckedModeBanner: false,
+    // Inicie la aplicación con la ruta con nombre. En nuestro caso, la aplicación comenzará
+    // en el Widget FirstScreen
+    initialRoute: '/',
+    routes: {
+      // Cuando naveguemos hacia la ruta "/", crearemos el Widget FirstScreen
+      '/': (context) => const Inicio(),
+      // Cuando naveguemos hacia la ruta "/second", crearemos el Widget SecondScreen
+      '/formulario1': (context) => const Formulario1(),
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+      '/formulario2': (context) => const Formulario2(),
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
+      '/formulario3': (context) => const Formulario3(),
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
-    );
-  }
+      '/formulario4': (context) => const Formulario4(),
+
+      '/formulario5': (context) => const Formulario5(),
+
+      '/productos': (context) => const Productos(),
+
+      '/sucursales': (context) => const Sucursales(),
+
+      '/listviewsAv': (context) => const ListviewsAv(),
+
+      '/infotarjeta': (context) => const Infotargeta(),
+    },
+  ));
 }
